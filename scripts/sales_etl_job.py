@@ -63,7 +63,10 @@ def main(run_date):
     print(f"Job completed for {run_date}")
     spark.stop()
 
-
+# This checks whether the script is being run directly (not imported).
+# If no command-line argument is provided after the script name,
+# it prints an error message and exits. The script expects a date
+# argument in the format YYYY-MM-DD (e.g., 2025-01-15).
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Please provide run_date argument in format YYYY-MM-DD")
